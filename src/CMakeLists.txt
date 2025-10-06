@@ -94,6 +94,17 @@ set(jni_source_files
 
 set(lib_source_code_files ${common_source_files})
 
+set(ffi_source_files
+        ${CMAKE_CURRENT_SOURCE_DIR}/ffi/ffi_gpupixel.cc
+        ${CMAKE_CURRENT_SOURCE_DIR}/ffi/ffi_filter.cc
+        ${CMAKE_CURRENT_SOURCE_DIR}/ffi/ffi_source_raw_data.cc
+        ${CMAKE_CURRENT_SOURCE_DIR}/ffi/ffi_source.cc
+        ${CMAKE_CURRENT_SOURCE_DIR}/ffi/ffi_source_image.cc
+        ${CMAKE_CURRENT_SOURCE_DIR}/ffi/ffi_sink_raw_data.cc
+        ${CMAKE_CURRENT_SOURCE_DIR}/ffi/ffi_face_detector.cc)
+
+list(APPEND lib_source_code_files ${ffi_source_files})
+
 if(${CMAKE_SYSTEM_NAME} MATCHES "Android")
   list(APPEND lib_source_code_files ${jni_source_files})
 elseif(${CMAKE_SYSTEM_NAME} MATCHES "Darwin" OR ${CMAKE_SYSTEM_NAME} MATCHES
