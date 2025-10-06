@@ -100,13 +100,8 @@ set(ffi_source_files
         ${CMAKE_CURRENT_SOURCE_DIR}/ffi/ffi_source_raw_data.cc
         ${CMAKE_CURRENT_SOURCE_DIR}/ffi/ffi_source.cc
         ${CMAKE_CURRENT_SOURCE_DIR}/ffi/ffi_source_image.cc
+        ${CMAKE_CURRENT_SOURCE_DIR}/ffi/ffi_face_detector.cc
         ${CMAKE_CURRENT_SOURCE_DIR}/ffi/ffi_sink_raw_data.cc)
-
-# Add face detector FFI source file based on options
-if(GPUPIXEL_ENABLE_FACE_DETECTOR)
-  list(APPEND ffi_source_files
-       ${CMAKE_CURRENT_SOURCE_DIR}/ffi/ffi_face_detector.cc)
-endif()
 
 list(APPEND lib_source_code_files ${ffi_source_files})
 
